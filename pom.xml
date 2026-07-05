@@ -11,8 +11,8 @@
 	<groupId>com.nordea</groupId>
 	<artifactId>bookflow</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>BookFlow</name>
+	<description>Library Loan Management Service</description>
 	<url/>
 	<licenses>
 		<license/>
