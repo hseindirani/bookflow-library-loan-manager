@@ -1,4 +1,6 @@
 package com.nordea.bookflow.loan;
 
-public class LoanStatus {
+public enum LoanStatus {
+    ACTIVE,
+    RETURNED
 }
