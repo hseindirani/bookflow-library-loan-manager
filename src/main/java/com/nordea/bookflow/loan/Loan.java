@@ -65,4 +65,7 @@ public class Loan {
         this.returnedAt = returnedAt;
         this.status = LoanStatus.RETURNED;
     }
+    public static Loan createActiveLoan(Long memberId, Long bookId, LocalDateTime borrowedAt) {
+        return new Loan(null, memberId, bookId, borrowedAt, null, LoanStatus.ACTIVE);
+    }
 }

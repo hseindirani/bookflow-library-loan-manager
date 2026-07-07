@@ -1,4 +1,6 @@
 package com.nordea.bookflow.book;
 
-public class BookRepository {
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+
+public interface BookRepository extends ReactiveCrudRepository<Book, Long> {
 }
