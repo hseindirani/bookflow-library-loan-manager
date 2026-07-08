@@ -21,4 +21,5 @@ public interface LoanRepository extends ReactiveCrudRepository<Loan, Long> {
             Long memberId,
             Long bookId,
             LoanStatus status);
+    Mono<Boolean> existsByMemberIdAndBookId(Long memberId, Long bookId);
 }

@@ -1,11 +1,6 @@
 package com.nordea.bookflow.common;
 
-import com.nordea.bookflow.common.exception.BookNotFoundException;
-import com.nordea.bookflow.common.exception.LoanAlreadyActiveException;
-import com.nordea.bookflow.common.exception.LoanAlreadyReturnedException;
-import com.nordea.bookflow.common.exception.LoanNotFoundException;
-import com.nordea.bookflow.common.exception.MemberNotFoundException;
-import com.nordea.bookflow.common.exception.NoCopiesAvailableException;
+import com.nordea.bookflow.common.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -46,6 +41,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiError> handleLoanAlreadyReturned(LoanAlreadyReturnedException ex) {
         return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
     }
+    @ExceptionHandler(RatingNotAllowedException.class)
+    public ResponseEntity<ApiError> handleRatingNotAllowed(RatingNotAllowedException ex) {
+        return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
 
     private ResponseEntity<ApiError> buildErrorResponse(HttpStatus status, String message) {
         ApiError error = new ApiError(

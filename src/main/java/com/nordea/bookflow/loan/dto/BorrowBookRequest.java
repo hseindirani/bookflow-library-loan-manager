@@ -1,4 +1,6 @@
 package com.nordea.bookflow.loan.dto;
 
-public class BorrowBookRequest {
+public record BorrowBookRequest(
+        Long memberId
+) {
 }

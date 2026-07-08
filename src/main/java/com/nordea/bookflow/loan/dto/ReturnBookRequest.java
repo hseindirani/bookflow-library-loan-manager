@@ -1,4 +1,6 @@
 package com.nordea.bookflow.loan.dto;
 
-public class ReturnBookRequest {
+public record ReturnBookRequest(
+        Long memberId
+) {
 }

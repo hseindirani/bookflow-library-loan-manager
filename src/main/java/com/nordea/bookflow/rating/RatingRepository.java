@@ -9,4 +9,5 @@ public interface RatingRepository extends ReactiveCrudRepository<Rating, Long> {
     Mono<Rating> findByMemberIdAndBookId(Long memberId, Long bookId);
 
     Flux<Rating> findByBookId(Long bookId);
+
 }
