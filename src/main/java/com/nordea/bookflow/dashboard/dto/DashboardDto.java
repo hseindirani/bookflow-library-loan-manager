@@ -1,4 +1,9 @@
 package com.nordea.bookflow.dashboard.dto;
 
-public class DashboardDto {
+import java.util.List;
+
+public record DashboardDto(
+        Long memberId,
+        List<DashboardItemDto> items
+) {
 }
