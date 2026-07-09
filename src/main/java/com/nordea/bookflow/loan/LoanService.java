@@ -31,7 +31,7 @@ public class LoanService {
                 .flatMap(book ->
                         validateNoActiveLoan(memberId, bookId)
                                 .then(validateBookIsAvailable(book))
-                                .then(createLoan(memberId, book))
+                                .then(Mono.defer(() -> createLoan(memberId, book))) //for testing making it lazy
                 );
     }
 

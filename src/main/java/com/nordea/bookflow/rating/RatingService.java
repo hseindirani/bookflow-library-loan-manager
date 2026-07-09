@@ -41,9 +41,11 @@ public class RatingService {
                 .then(bookRepository.findById(bookId)
                         .switchIfEmpty(Mono.error(new BookNotFoundException(bookId))))
                 .then(validateMemberHasBorrowedBook(memberId, bookId))
-                .then(ratingRepository.findByMemberIdAndBookId(memberId, bookId)
-                        .flatMap(existingRating -> updateExistingRating(existingRating, request))
-                        .switchIfEmpty(createNewRating(memberId, bookId, request)));
+                .then(Mono.defer(() ->
+                        ratingRepository.findByMemberIdAndBookId(memberId, bookId)
+                                .flatMap(existingRating -> updateExistingRating(existingRating, request))
+                                .switchIfEmpty(Mono.defer(() -> createNewRating(memberId, bookId, request)))
+                ));
     }
 
     private Mono<Void> validateMemberHasBorrowedBook(Long memberId, Long bookId) {

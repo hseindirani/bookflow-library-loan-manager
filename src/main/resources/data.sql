@@ -1,3 +1,4 @@
+
 -- =========================
 -- Books
 -- =========================
@@ -36,3 +37,8 @@ VALUES
 (1, 2, 1, 5, 'Very helpful book.', TIMESTAMP '2026-06-28 15:00:00', TIMESTAMP '2026-06-28 15:00:00'),
 (2, 3, 1, 4, 'Easy to understand.', TIMESTAMP '2026-06-30 17:00:00', TIMESTAMP '2026-06-30 17:00:00'),
 (3, 1, 2, 4, 'Good introduction to Spring Boot.', TIMESTAMP '2026-07-02 12:00:00', TIMESTAMP '2026-07-02 12:00:00');
+
+ALTER TABLE books ALTER COLUMN id RESTART WITH 5;
+ALTER TABLE members ALTER COLUMN id RESTART WITH 5;
+ALTER TABLE loans ALTER COLUMN id RESTART WITH 4;
+ALTER TABLE ratings ALTER COLUMN id RESTART WITH 4;
