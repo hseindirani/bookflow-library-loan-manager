@@ -149,3 +149,62 @@ Some notable design decisions include:
 - Average book rating is calculated dynamically rather than stored in the database.
 
 ---
+
+---
+
+## Angular Frontend
+
+The project also includes a simple Angular frontend that consumes the REST API and demonstrates the complete flow between frontend and backend.
+
+### Technologies
+
+- Angular
+- TypeScript
+
+### Features
+
+- Load dashboard by Member ID
+- Display current borrowed books
+- Display member rating and average rating
+- Handle members with no active loans
+- Display user-friendly error messages
+- Format dates using Angular DatePipe
+
+### Frontend Architecture
+
+The frontend follows Angular's separation of concerns.
+
+```
+DashboardComponent
+        │
+        ▼
+DashboardService
+        │
+        ▼
+Spring Boot REST API
+```
+
+- **DashboardComponent** manages the UI state and user interactions.
+- **DashboardService** is responsible only for HTTP communication with the backend.
+- Business logic remains entirely in Spring Boot.
+
+### Running the Frontend
+
+```bash
+cd bookflow-dashboard
+npm install
+ng serve
+```
+
+The frontend runs on:
+
+```
+http://localhost:4200
+```
+
+Ensure the Spring Boot backend is also running on:
+
+```
+http://localhost:8080
+```
+
