@@ -2,18 +2,48 @@ section {
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 24px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 24px;
 }
 
 .member-search {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 24px 0 32px;
+  margin-bottom: 24px;
+}
+
+.member-search label {
+  font-weight: 600;
 }
 
 input,
 button {
   padding: 10px 12px;
+  font-size: 1rem;
+}
+
+input {
+  width: 140px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.current-loans {
+  margin-top: 24px;
 }
 
 table {
@@ -26,4 +56,19 @@ td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: 600;
+}
+
+.error-message {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid #d9534f;
+  border-radius: 4px;
+}
+
+.current-loans p {
+  padding: 16px 0;
 }
