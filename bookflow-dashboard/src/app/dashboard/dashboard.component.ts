@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DashboardService } from './dashboard.service';
+import { DashboardResponse } from './dashboard.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,5 +10,11 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+  dashboard: DashboardResponse | null = null;
+
+  constructor(private dashboardService: DashboardService) {}
+
+}
 
 }
