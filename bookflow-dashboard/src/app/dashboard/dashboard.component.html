@@ -3,8 +3,8 @@
 
   <div class="member-search">
     <label for="memberId">Member ID</label>
-    <input id="memberId" type="number">
-    <button type="button">Load Dashboard</button>
+   <input id="memberId" type="number" [(ngModel)]="memberId">
+    <button type="button" (click)="loadDashboard()"> Load Dashboard </button>
   </div>
 
   <div class="current-loans">
