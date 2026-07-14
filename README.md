@@ -15,8 +15,6 @@ The application allows members to borrow and return books, rate books they have 
 - H2 Database
 - Maven
 - OpenAPI / Swagger
-- JUnit 5
-- Mockito
 
 ---
 
@@ -55,8 +53,6 @@ common
 ```
 
 Each feature contains its own domain classes, repository, service, controller and DTOs.
-
-This keeps related code together and makes the project easier to maintain as it grows.
 
 ---
 
@@ -138,20 +134,6 @@ The project includes both unit and integration tests.
 
 ---
 
-## Design Decisions
-
-Some notable design decisions include:
-
-- Feature-based package structure instead of layer-based packaging.
-- Reactive programming using Spring WebFlux.
-- Transactions for operations that update multiple entities.
-- Dashboard implemented as a dedicated endpoint to simplify frontend integration.
-- Average book rating is calculated dynamically rather than stored in the database.
-
----
-
----
-
 ## Angular Frontend
 
 The project also includes a simple Angular frontend that consumes the REST API and demonstrates the complete flow between frontend and backend.
@@ -168,7 +150,6 @@ The project also includes a simple Angular frontend that consumes the REST API a
 - Display member rating and average rating
 - Handle members with no active loans
 - Display user-friendly error messages
-- Format dates using Angular DatePipe
 
 ### Frontend Architecture
 
@@ -202,9 +183,4 @@ The frontend runs on:
 http://localhost:4200
 ```
 
-Ensure the Spring Boot backend is also running on:
-
-```
-http://localhost:8080
-```
-
+Ensure the Spring Boot backend is also running 
