@@ -17,6 +17,10 @@ public class LoanController {
         this.loanService = loanService;
     }
 
+    // In a production system, Spring Security would authenticate the user,
+    // issue a JWT after login, and the member identity would be extracted
+    // from the token instead of trusting a request parameter or body.
+
     @PostMapping("/books/{bookId}/loans")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<LoanResponse> borrowBook(
